@@ -1,56 +1,67 @@
 # Cordova Echo Plugin
 
-Simple Cordova plugin that helps to echo the message and it will support Android platforms.
+一个简单的Cordova插件，实现web和native消息互通功能，支持Android平台。
 
-## Two kind of Echo messages plugins.
+支持两种消息类型
 
-    1. Thread-safe callback.    
-    2. Non Thread-safe callback.
+1. 线程安全的回调消息
+2. 线程不安全的回调消息
 
-## Using
-Clone the plugin
+## 如何使用
 
-    $ git clone http://gitlab.developer.com/cordova/cordova-plugin-echo.git
+1. 创建一个cordova工程
 
-Create a new Cordova Project
+    ```bash
+    cordova create echo com.uviexample.uviechoapp Echo
+    cd echo
+    ```
 
-    $ cordova create echo com.uviexample.uviechoapp Echo
-    
-Install the plugin
+2. 安装插件
 
-    $ cd echo
-    $ cordova plugin add ../cordova-plugin-echo
-    
+    通过git仓库方式安装
 
-Edit `www/js/index.js` and add the following code inside `onDeviceReady` and save the file.
+    ```bash
+    dordova plugin add git+http://gitlab.developer.com/cordova/cordova-plugin-echo.git
+    ```
 
-```js
-var success = function(message) {
-    alert(message);
-}
+    通过本地文件方式安装
 
-var failure = function() {
-    alert("Error calling Echo Plugin");
-}
+    ```bash
+    git clone http://gitlab.developer.com/cordova/cordova-plugin-echo.git
+    cordova plugin add ./cordova-plugin-echo
+    ```
 
-echo.threadFunction("Echo me - thread!!!", success, failure);
-echo.nonThreadFunction("Echo me - nonthread!!!", success, failure);
-```
+3. 接口测试
 
-Install Android platform
+    编辑 `www/js/index.js` 文件，在 `onDeviceReady` 函数内加入如下语句并保存文件。
 
-```bash
-cordova platform add android
-```
+    ```js
+    var success = function(message) {
+        alert(message);
+    }
 
-Build the code 
+    var failure = function() {
+        alert("Error calling Echo Plugin");
+    }
 
-```bash
-cordova build
-```    
-    
-Run the code
+    echo.threadFunction("Echo me - thread!!!", success, failure);
+    echo.nonThreadFunction("Echo me - nonthread!!!", success, failure);
+    ```
 
-```
-cordova run
-```
+4. 安装支持平台
+
+    ```bash
+    cordova platform add android
+    ```
+
+5. 构建应用
+
+    ```bash
+    cordova build
+    ```    
+
+6. 运行应用
+
+    ```bash
+    cordova run
+    ```
