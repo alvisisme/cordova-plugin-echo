@@ -1,4 +1,6 @@
-package com.example.plugin;
+package com.plugin.echo;
+
+import android.util.Log;
 
 import org.apache.cordova.*;
 import org.json.JSONArray;
@@ -12,7 +14,7 @@ public class Echo extends CordovaPlugin {
         if (action.equals("threadFunction")) {
             // Get the echo argument
             String echoArg = data.getString(0);
-            this.echo(echoArg, callbackContext);
+            echo(echoArg, callbackContext);
             return true;
 
         } else if (action.equals("nonThreadFunction")) { //
@@ -21,8 +23,15 @@ public class Echo extends CordovaPlugin {
             
                 public void run() {  // Thread-safe.
                     // Get the echo argument
-                    String echoArg = data.getString(0);
-                    this.echo(echoArg, callbackContext);
+                    String echoArg = "";
+                    try {
+                        echoArg = data.getString(0);
+                    } catch (Exception e) {
+                        Log.e("cordova","error");
+                    }
+
+                    echo(echoArg, callbackContext);
+
                 }
 
             });

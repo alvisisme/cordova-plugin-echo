@@ -15,18 +15,6 @@
     <clobbers target="echo" />
   </js-module>
 
-  <platform name="ios">
-    
-    <config-file target="config.xml" parent="/widget">
-      <feature name="echo">
-        <param name="ios-package" value="UviCordovaEcho" />
-      </feature>
-    </config-file>
-
-    <header-file src="src/ios/UviCordovaEcho.h" target-dir="UviEchoPlugin"/>
-    <source-file src="src/ios/UviCordovaEcho.m" target-dir="UviEchoPlugin"/>
-  </platform>
-
   <platform name="android">
 
     <config-file target="res/xml/config.xml" parent="/*">
@@ -35,7 +23,7 @@
       </feature>
     </config-file>
 
-    <source-file src="src/android/Echo.java" target-dir="src/com/example/plugin/"/>
+    <source-file src="src/android/Echo.java" target-dir="src/com/plugin/echo"/>
   </platform>
 
 </plugin>

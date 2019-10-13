@@ -5,7 +5,6 @@
   "cordova": {
     "id": "com.plugin.echo",
     "platforms": [
-      "ios",
       "android"
     ]
   },
