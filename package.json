@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "http://gitlab.developer.com/cordova/cordova-plugin-echo.git"
+    "url": "https://github.com/alvisisme/cordova-plugin-echo.git.git"
   },
   "keywords": [
     "ecosystem:cordova",
