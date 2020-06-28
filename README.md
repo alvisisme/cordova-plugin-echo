@@ -21,13 +21,13 @@
     通过git仓库方式安装
 
     ```bash
-    dordova plugin add git+https://github.com/alvisisme/cordova-plugin-echo.git.git
+    dordova plugin add git+https://github.com/alvisisme/cordova-plugin-echo.git
     ```
 
     通过本地文件方式安装
 
     ```bash
-    git clone https://github.com/alvisisme/cordova-plugin-echo.git.git
+    git clone https://github.com/alvisisme/cordova-plugin-echo.git
     cordova plugin add ./cordova-plugin-echo
     ```
 
