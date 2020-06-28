@@ -10,11 +10,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/alvisisme/cordova-plugin-echo.git.git"
+    "url": "https://github.com/alvisisme/cordova-plugin-echo.git"
   },
   "keywords": [
     "ecosystem:cordova",
-    "cordova-ios",
     "cordova-android"
   ],
   "engines": [
